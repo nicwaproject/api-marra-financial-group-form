@@ -2,9 +2,9 @@ import { Resend } from "resend";
 import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer-core";
 
-import buildRetirementBudget from "../templates/retirement-budget.js";
-import buildRiskTolerance from "../templates/risk-tolerance.js";
-import buildIncomeFactFinder from "../templates/income-fact-finder.js";
+import buildRetirementBudget from "/templates/retirement-budget.js";
+import buildRiskTolerance from "/templates/risk-tolerance.js";
+import buildIncomeFactFinder from "/templates/income-fact-finder.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
