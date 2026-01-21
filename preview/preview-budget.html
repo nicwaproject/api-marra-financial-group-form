@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retirement Budget – Preview</title>
+</head>
+<body>
+
+<script type="module">
+  import buildRetirementBudget from "/templates/retirement-budget.js";
+
+  const payload = {
+    formId: "retirement-budget",
+
+    meta: {
+      clientName: "Preview User",
+      submissionDate: "2026-01-21"
+    },
+
+    data: {
+      housing: {
+        mortgageRent: 1800,
+        propertyTaxes: 450,
+        homeInsurance: 120,
+        internetCable: 90,
+        utilities: 220,
+        cellPhone: 110,
+        homeMaintenance: 150,
+        hoaFees: 75,
+        lawnCare: 60,
+        homeSecurity: 45,
+        total: 3120
+      },
+
+      transport: {
+        vehiclePayment: 420,
+        fuelGas: 180,
+        maintenanceRepairs: 90,
+        autoInsurance: 160,
+        registrationInspection: 25,
+        parkingTolls: 40,
+        publicTransit: 0,
+        total: 915
+      },
+
+      living: {
+        groceries: 650,
+        clothingShoes: 120,
+        petCare: 90,
+        diningOut: 200,
+        householdSupplies: 85,
+        personalCare: 75,
+        otherLiving: 50,
+        total: 1270
+      },
+
+      health: {
+        medicarePremiums: 340,
+        medicareSupplement: 220,
+        dentalCare: 60,
+        visionCare: 35,
+        hearingAids: 0,
+        prescriptionDrugs: 140,
+        copaysDeductibles: 80,
+        longTermCareInsurance: 190,
+        lifeInsurance: 110,
+        otherHealth: 0,
+        total: 1175
+      },
+
+      lifestyle: {
+        travelVacations: 300,
+        hobbiesClubs: 120,
+        subscriptions: 65,
+        charitableDonations: 150,
+        gifts: 100,
+        entertainment: 90,
+        fitnessClasses: 70,
+        otherLifestyle: 0,
+        total: 895
+      },
+
+      debt: {
+        creditCards: 180,
+        personalLoans: 220,
+        medicalBills: 0,
+        taxes: 150,
+        quarterlyTaxPayments: 0,
+        otherDebt: 0,
+        total: 550
+      }
+    },
+
+    summary: {
+      housing: 3120,
+      transport: 915,
+      living: 1270,
+      health: 1175,
+      lifestyle: 895,
+      debt: 550,
+      grandTotal: 7925
+    }
+  };
+
+  // GANTI ISI HALAMAN DENGAN TEMPLATE
+  document.open();
+  document.write(buildRetirementBudget(payload));
+  document.close();
+</script>
+
+</body>
+</html>

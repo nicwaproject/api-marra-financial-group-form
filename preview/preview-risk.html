@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Risk Tolerance PDF Preview</title>
+  <link rel="icon" href="/assets/favicon.png" />
+</head>
+<body>
+  <script type="module">
+    import buildRiskTolerance from "/templates/risk-tolerance-assessment.js";
+
+    const payload = {
+  formId: "risk-tolerance-assessment",
+
+  meta: {
+    clientName: "Preview User",
+    submissionDate: "2026-01-20"
+  },
+
+  sections: {
+    objective: {
+      selected: "accumulation",
+      score: 12
+    },
+    horizon: {
+      selected: "11-15",
+      score: 9
+    },
+    portfolio: {
+      selected: "C",
+      score: 6
+    },
+    risklevel: {
+      selected: 7,
+      score: 14
+    },
+    recovery: {
+      selected: "3-5yr",
+      score: 12
+    },
+    incomeStability: {
+      selected: "mostly-stable",
+      score: 9
+    },
+    emergency: {
+      selected: "able",
+      score: 6
+    }
+  },
+
+  totalRiskScore: 68
+}
+
+    // ⬅️ GANTI SELURUH DOCUMENT
+    document.open();
+    document.write(buildRiskTolerance(payload));
+    document.close();
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Retirement Income Fact Finder – PDF Preview</title>
+
+  <!-- penting: biar PDF-style full width & background -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <script type="module">
+    import buildIncomeFactFinder from "/templates/retirement-income-fact-finder.js";
+
+    const payload = {
+      meta: {
+        clientName: "Preview Client",
+        spouseName: "Preview Spouse",
+        phone: "631-555-1234",
+        clientDob: "1965-03-12",
+        spouseDob: "1967-07-22",
+        retirementClient: "2030-06-01",
+        retirementSpouse: "2032-09-01",
+        submissionDate: "2026-01-21"
+      },
+
+      income: {
+        ss62: {
+          client: 1200,
+          spouse: 900,
+          joint: 0,
+          currentValue: 0,
+          currentInvestment: 0
+        },
+        ss67: {
+          client: 1800,
+          spouse: 1400,
+          joint: 0,
+          currentValue: 0,
+          currentInvestment: 0
+        },
+        ss70: {
+          client: 2200,
+          spouse: 1700,
+          joint: 0,
+          currentValue: 0,
+          currentInvestment: 0
+        },
+        pension: {
+          client: 1500,
+          spouse: 0,
+          joint: 0,
+          currentValue: 250000,
+          currentInvestment: 0
+        },
+        rental: {
+          client: 800,
+          spouse: 0,
+          joint: 0,
+          currentValue: 180000,
+          currentInvestment: 0
+        },
+        other: {
+          client: 300,
+          spouse: 200,
+          joint: 0,
+          currentValue: 0,
+          currentInvestment: 0
+        },
+        totals: {
+          client: 7800,
+          spouse: 4200,
+          joint: 0,
+          currentValue: 430000,
+          currentInvestment: 0
+        }
+      },
+
+      assets: {
+        savings: { client: 40000, spouse: 30000, joint: 20000, currentValue: 90000 },
+        checking: { client: 15000, spouse: 12000, joint: 8000, currentValue: 35000 },
+        cds: { client: 25000, spouse: 0, joint: 0, currentValue: 25000 },
+        annuities: { client: 100000, spouse: 0, joint: 0, currentValue: 100000 },
+        brokerage: { client: 220000, spouse: 180000, joint: 0, currentValue: 400000 },
+        crypto: { client: 15000, spouse: 0, joint: 0, currentValue: 15000 },
+        gold: { client: 8000, spouse: 0, joint: 0, currentValue: 8000 },
+        inheritance: { client: 0, spouse: 0, joint: 0, currentValue: 0 },
+        ira: { client: 180000, spouse: 140000, joint: 0, currentValue: 320000 },
+        rothIra: { client: 90000, spouse: 70000, joint: 0, currentValue: 160000 },
+        k401: { client: 350000, spouse: 220000, joint: 0, currentValue: 570000 },
+        roth401: { client: 120000, spouse: 90000, joint: 0, currentValue: 210000 },
+        totals: {
+          client: 1148000,
+          spouse: 742000,
+          joint: 28000,
+          currentValue: 1918000
+        }
+      },
+
+      additional: {
+        desiredIncome: "$8,500 per month",
+        largePurchases: "New vehicle in first 3 years of retirement",
+        longTermCare: "Yes – hybrid life/LTC policy",
+        estatePlanning: "Revocable living trust completed",
+        costLiving: "3% annual adjustment assumed",
+        homeValue: "$725,000",
+        downsizing: "Possibly within 5 years",
+        realEstate: "Rental property in Florida ($180,000)",
+        totalDebt: "$95,000 remaining mortgage"
+      }
+    };
+
+    // render penuh (replace entire document body)
+    document.open();
+    document.write(buildIncomeFactFinder(payload));
+    document.close();
+  </script>
+</body>
+</html>
