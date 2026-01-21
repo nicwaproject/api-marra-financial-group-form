@@ -1,4 +1,4 @@
-import retirementBudgetCSS from "/styles/retirement-budget-style.js";
+import retirementBudgetCSS from "../styles/retirement-budget-style.js";
 
 export default function buildRetirementBudget(payload) {
   const { meta, data, summary } = payload;

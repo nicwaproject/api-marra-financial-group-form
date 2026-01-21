@@ -4,7 +4,7 @@
  * Output : Full HTML document string
  */
 
-import riskToleranceCSS from "/styles/risk-tolerance-assessment-style.js";
+import riskToleranceCSS from "../styles/risk-tolerance-assessment-style.js";
 
 export default function buildRiskTolerance(payload) {
   const { meta, sections, totalRiskScore } = payload;

@@ -1,4 +1,4 @@
-import incomeFinderCSS from "/styles/retirement-income-fact-finder-style.js";
+import incomeFinderCSS from "../styles/retirement-income-fact-finder-style.js";
 
 export default function buildIncomeFactFinder(payload) {
   const { meta, income, assets, additional } = payload;
