@@ -21,7 +21,7 @@ export default function buildRiskTolerance(payload) {
   </style>
 </head>
 
-<body class=container>
+<body class="container">
 
   <!-- HEADER -->
   <header class="form-header">
