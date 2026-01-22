@@ -50,6 +50,9 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Invalid formId" });
     }
 
+    // === DEBUG HTML ===
+    console.log("HTML length:", html?.length);
+
     // ===============================
     // PUPPETEER LAUNCH
     // ===============================
@@ -78,10 +81,6 @@ export default async function handler(req, res) {
     await browser.close();
 
     console.log("PDF size:", pdfBuffer.length);
-
-    res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Disposition", "inline; filename=test.pdf");
-    return res.status(200).send(pdfBuffer);
 
     // ===============================
     // EMAIL SEND

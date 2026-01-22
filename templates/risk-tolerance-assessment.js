@@ -7,6 +7,9 @@
 import riskToleranceCSS from "../styles/risk-tolerance-assessment-style.js";
 
 export default function buildRiskTolerance(payload) {
+
+  console.log("Risk CSS length:", riskToleranceCSS?.length);
+  
   const { meta, sections, totalRiskScore } = payload;
 
   return `
