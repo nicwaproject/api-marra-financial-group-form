@@ -77,6 +77,8 @@ export default async function handler(req, res) {
 
     await browser.close();
 
+    console.log("PDF size:", pdfBuffer.length);
+    
     // ===============================
     // EMAIL SEND
     // ===============================

@@ -25,7 +25,7 @@ export default function buildRiskTolerance(payload) {
 
   <!-- HEADER -->
   <header class="form-header">
-    <img src="/assets/marra_logo.png" class="marra-logo" />
+    <img src="https://nicwaproject.github.io/api-marra-financial-group-form/assets/marra_logo.png" class="marra-logo" />
     <h1>Risk Tolerance Assessment</h1>
     <p class="meta">
       ${escape(meta.clientName)} · ${escape(meta.submissionDate)}

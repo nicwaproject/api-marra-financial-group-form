@@ -34,7 +34,7 @@ function renderHeader(meta) {
   return `
 <header class="form-header">
   <div class="brand">
-    <img src="/assets/marra_logo.png" alt="Marra Financial Group Logo" />
+    <img src="https://nicwaproject.github.io/api-marra-financial-group-form/assets/marra_logo.png" alt="Marra Financial Group Logo" />
   </div>
   <div class="form-title">
     <h1>RETIREMENT INCOME FACT FINDER</h1>
