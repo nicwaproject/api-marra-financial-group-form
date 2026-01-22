@@ -99,6 +99,9 @@ export default async function handler(req, res) {
       ? meta.clientName.replace(/\s+/g, "-")
       : "Client";
 
+    const pdfBufferSafe = Buffer.from(pdfBuffer);
+    const pdfBase64 = pdfBufferSafe.toString("base64");
+
     const fileName = `${formId}_${safeName}.pdf`;
 
     await resend.emails.send({
@@ -113,7 +116,7 @@ export default async function handler(req, res) {
       attachments: [
       {
         filename: fileName,
-        content: pdfBuffer,
+        content: pdfBase64,
         contentType: "application/pdf"
       }
     ],
