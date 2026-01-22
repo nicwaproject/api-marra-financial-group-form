@@ -113,7 +113,7 @@ export default async function handler(req, res) {
       attachments: [
       {
         filename: fileName,
-        content: pdfBuffer.toString("base64"),
+        content: pdfBuffer,
         contentType: "application/pdf"
       }
     ],
