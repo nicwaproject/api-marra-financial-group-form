@@ -99,6 +99,7 @@ export default async function handler(req, res) {
         {
           filename: fileName,
           content: pdfBuffer.toString("base64"),
+          encoding: "base64",
         },
       ],
     });
