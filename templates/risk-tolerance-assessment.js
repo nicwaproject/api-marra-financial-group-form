@@ -9,7 +9,7 @@ import riskToleranceCSS from "../styles/risk-tolerance-assessment-style.js";
 export default function buildRiskTolerance(payload) {
 
   console.log("Risk CSS length:", riskToleranceCSS?.length);
-  
+
   const { meta, sections, totalRiskScore } = payload;
 
   return `
@@ -28,7 +28,7 @@ export default function buildRiskTolerance(payload) {
 
   <!-- HEADER -->
   <header class="form-header">
-    <img src="https://nicwaproject.github.io/api-marra-financial-group-form/assets/marra_logo.png" class="marra-logo" />
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." />
     <h1>Risk Tolerance Assessment</h1>
     <p class="meta">
       ${escape(meta.clientName)} · ${escape(meta.submissionDate)}
