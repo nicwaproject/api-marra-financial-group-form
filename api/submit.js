@@ -111,14 +111,12 @@ export default async function handler(req, res) {
         <p><strong>Client:</strong> ${meta?.clientName || "-"}</p>
       `,
       attachments: [
-        {
-          filename: fileName,
-          content: pdfBuffer.toString("base64"),
-          encoding: "base64",
-          type: "application/pdf",
-          disposition: "attachment"
-        },
-      ],
+      {
+        filename: fileName,
+        content: pdfBuffer.toString("base64"),
+        contentType: "application/pdf"
+      }
+    ],
     });
 
     return res.status(200).json({
