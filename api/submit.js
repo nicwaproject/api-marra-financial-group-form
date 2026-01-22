@@ -78,7 +78,11 @@ export default async function handler(req, res) {
     await browser.close();
 
     console.log("PDF size:", pdfBuffer.length);
-    
+
+    // res.setHeader("Content-Type", "application/pdf");
+    // res.setHeader("Content-Disposition", "inline; filename=test.pdf");
+    // return res.status(200).send(pdfBuffer);
+
     // ===============================
     // EMAIL SEND
     // ===============================
@@ -102,6 +106,8 @@ export default async function handler(req, res) {
           filename: fileName,
           content: pdfBuffer.toString("base64"),
           encoding: "base64",
+          type: "application/pdf",
+          disposition: "attachment"
         },
       ],
     });
