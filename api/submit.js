@@ -79,9 +79,9 @@ export default async function handler(req, res) {
 
     console.log("PDF size:", pdfBuffer.length);
 
-    // res.setHeader("Content-Type", "application/pdf");
-    // res.setHeader("Content-Disposition", "inline; filename=test.pdf");
-    // return res.status(200).send(pdfBuffer);
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader("Content-Disposition", "inline; filename=test.pdf");
+    return res.status(200).send(pdfBuffer);
 
     // ===============================
     // EMAIL SEND
