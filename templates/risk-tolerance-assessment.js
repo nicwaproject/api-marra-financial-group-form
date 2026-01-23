@@ -138,7 +138,9 @@ export default function buildRiskTolerance(payload) {
   <!-- 5. RECOVERY TIME -->
   <!-- ===================== -->
   <section class="card">
-    <h2 class="question-title">5. Recovery Time After Loss</h2>
+    <h2 class="question-title">5. Return Account</h2>
+      <p class="question-desc">How long are you prepared to wait for your account to return to its original
+      value after a down market?</p>
 
     ${radio("Less than 18 months", sections.recovery.selected === "lt-18")}
     ${radio("18–24 months", sections.recovery.selected === "18-24")}
@@ -152,7 +154,8 @@ export default function buildRiskTolerance(payload) {
   <!-- 6. INCOME STABILITY -->
   <!-- ===================== -->
   <section class="card">
-    <h2 class="question-title">6. Income Stability</h2>
+    <h2 class="question-title">6. Income</h2>
+    <p class="question-desc">My current income and future income (salary, pension, etc.) is:</h2>
 
     ${radio("Very Secure / Stable", sections.incomeStability.selected === "very-stable")}
     ${radio("Mostly Secure / Stable", sections.incomeStability.selected === "mostly-stable")}
@@ -165,7 +168,9 @@ export default function buildRiskTolerance(payload) {
   <!-- 7. EMERGENCY -->
   <!-- ===================== -->
   <section class="card">
-    <h2 class="question-title">7. Emergency Preparedness</h2>
+    <h2 class="question-title">7. Financial Emergencies</h2>
+    <p class="question-desc">How able are you to handle financial emergencies with assets outside of your
+      investment account(s)?</p>
 
     ${radio("Very Able", sections.emergency.selected === "very-able")}
     ${radio("Mostly Able", sections.emergency.selected === "mostly-able")}
