@@ -6,7 +6,7 @@ export default `
 
 @font-face {
   font-family: 'Allura';
-  src: url('../assets/Allura-Regular.ttf') format('truetype');
+  src: url('https://nicwaproject.github.io/api-marra-financial-group-form/assets/Allura-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -70,6 +70,7 @@ header {
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 24px;
+  margin-top 20px;
 }
 
 h1 {
@@ -402,7 +403,7 @@ justify-content: center;
   width: 10px;
   height: 10px;
   border: 2px solid #082b4c;
-  border-radius: 3px;   /* kotak, lebih jelas di PDF */
+  border-radius: 20px;   /* kotak, lebih jelas di PDF */
   display: flex;
   align-items: center;
   justify-content: center;
