@@ -28,7 +28,7 @@ export default function buildRiskTolerance(payload) {
 
   <!-- HEADER -->
   <header class="form-header">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." />
+    <img class="marra_logo" src="../assets/marra_logo.png" />
     <h1>Risk Tolerance Assessment</h1>
     <p class="meta">
       ${escape(meta.clientName)} · ${escape(meta.submissionDate)}
@@ -75,7 +75,8 @@ export default function buildRiskTolerance(payload) {
     ${radio("11–15 Years", sections.horizon.selected === "11-15")}
     ${radio("15+ Years", sections.horizon.selected === "15+")}
   </section>
-
+  
+  <div class="page-break"></div>
   <!-- ===================== -->
   <!-- 3. RISK / RETURN -->
   <!-- ===================== -->
@@ -145,7 +146,8 @@ export default function buildRiskTolerance(payload) {
     ${radio("3–5 years", sections.recovery.selected === "3-5yr")}
     ${radio("5+ years", sections.recovery.selected === "5+")}
   </section>
-
+  
+  <div class="page-break"></div>
   <!-- ===================== -->
   <!-- 6. INCOME STABILITY -->
   <!-- ===================== -->
@@ -172,6 +174,7 @@ export default function buildRiskTolerance(payload) {
     ${radio("Not Able", sections.emergency.selected === "not-able")}
   </section>
 
+  <div class="page-break"></div>
   <!-- ===================== -->
   <!-- SUMMARY -->
   <!-- ===================== -->
@@ -219,7 +222,9 @@ export default function buildRiskTolerance(payload) {
 function radio(label, checked) {
   return `
     <div class="radio-row">
-      <span class="radio">${checked ? "●" : "○"}</span>
+      <span class="radio-box ${checked ? "checked" : ""}">
+        ${checked ? "✓" : ""}
+      </span>
       <span class="label">${label}</span>
     </div>
   `;
@@ -228,7 +233,11 @@ function radio(label, checked) {
 function portfolioRow(letter, risk, high, low, checked) {
   return `
     <tr>
-      <td class="radio-cell">${checked ? "●" : "○"}</td>
+      <td class="radio-cell">
+        <span class="radio-box ${checked ? "checked" : ""}">
+          ${checked ? "✓" : ""}
+        </span>
+      </td>
       <td>Portfolio ${letter} ${risk ? `<span class="muted">(${risk})</span>` : ""}</td>
       <td>${high}</td>
       <td>${low}</td>

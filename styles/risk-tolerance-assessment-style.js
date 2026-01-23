@@ -4,6 +4,13 @@ export default `
     --secondary-color:#082b4c;
 }
 
+@font-face {
+  font-family: 'Allura';
+  src: url('../assets/Allura-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .page-break {
   page-break-before: always;
 }
@@ -43,7 +50,7 @@ header {
   margin-bottom: 12px;
 }
 
-.marra-logo {
+.marra_logo {
   height: 72px; /* kecil & profesional */
   width: auto;
 }
@@ -386,12 +393,33 @@ justify-content: center;
 
 .radio-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  padding: 8px 0;
+  margin: 8px 0;
+}
+
+.radio-box {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #082b4c;
+  border-radius: 3px;   /* kotak, lebih jelas di PDF */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
-  border-bottom: none;
-  font-size: 14px;
+  font-weight: bold;
+  color: #082b4c;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.radio-box.checked {
+  background: #082b4c;
+  color: #ffffff;
+}
+
+.radio-cell .radio-box {
+  margin: auto;
 }
 
 .option input {
@@ -593,7 +621,7 @@ justify-content: center;
 
 /* mode signature */
 .signature-name {
-  font-family: 'Allura', 'Brush Script MT', cursive;
+  font-family: 'Allura';
   font-size: 30px;
   text-align: center;
   color: #082b4c;
