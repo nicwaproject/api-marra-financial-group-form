@@ -5,6 +5,13 @@ export default `
     --secondary-color:#082b4c;
 }
 
+@font-face {
+  font-family: 'Allura';
+  src: url('https://nicwaproject.github.io/api-marra-financial-group-form/assets/Allura-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .page-break {
   page-break-before: always;
 }
@@ -193,7 +200,7 @@ input:focus {
 
 /* mode signature */
 .signature-name {
-  font-family: 'Allura', 'Brush Script MT', cursive;
+  font-family: 'Allura';
   font-size: 30px;
   text-align: center;
   color: #082b4c;

@@ -42,7 +42,7 @@ function renderHeader(meta) {
   return `
 <header class="form-header">
   <div class="brand">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." />
+    <img src="https://nicwaproject.github.io/api-marra-financial-group-form/assets/marra_logo.png" />
   </div>
 
   <div class="form-title">
@@ -75,6 +75,8 @@ function renderHousing(h = {}) {
     <span>Housing Total</span>
     <span>$${fmt(h.total)}</span>
   </div>
+
+  <div class="page-break"></div>
 </section>
 `;
 }
@@ -121,6 +123,8 @@ function renderLiving(l = {}) {
     <span>Daily Living Total</span>
     <span>$${fmt(l.total)}</span>
   </div>
+
+  <div class="page-break"></div>
 </section>
 `;
 }
@@ -193,6 +197,8 @@ function renderDebt(d = {}) {
     <span>Debt & Obligations Total</span>
     <span>$${fmt(d.total)}</span>
   </div>
+
+  <div class="page-break"></div>
 </section>
 `;
 }
@@ -266,8 +272,8 @@ function summaryRow(label, value) {
 
 function fmt(n) {
   return Number(n || 0).toLocaleString("en-US", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
   });
 }
 
