@@ -52,7 +52,9 @@ function renderHeader(meta) {
 
   <div class="form-title">
     <h1>RETIREMENT BUDGET</h1>
-    <p>Please enter your estimated monthly expenses.</p>
+    <p class="meta">
+      ${escape(meta.clientName)} · ${escape(meta.submissionDate)}
+    </p>
   </div>
 </header>
 `;
