@@ -81,9 +81,9 @@ export default async function handler(req, res) {
       format: "A4",
       printBackground: true,
       margin: {
-        top: "20mm",
+        top: "15mm",
         right: "15mm",
-        bottom: "20mm",
+        bottom: "15mm",
         left: "15mm",
       },
     });
