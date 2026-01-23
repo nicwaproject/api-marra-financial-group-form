@@ -17,9 +17,17 @@ export default function buildIncomeFactFinder(payload) {
 
   ${renderHeader(meta)}
   ${renderClientInfo(meta)}
+  <div class="page-break"></div>
+
   ${renderIncomeTable(income)}
+  <div class="page-break"></div>
+
   ${renderAssetsTable(assets)}
+  <div class="page-break"></div>
+
   ${renderAdditional(additional)}
+  <div class="page-break"></div>
+  
   ${renderConfirmation(meta)}
 
 </main>
@@ -34,11 +42,13 @@ function renderHeader(meta) {
   return `
 <header class="form-header">
   <div class="brand">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." />
+    <img src="https://nicwaproject.github.io/api-marra-financial-group-form/assets/marra_logo.png" />
   </div>
   <div class="form-title">
     <h1>RETIREMENT INCOME FACT FINDER</h1>
-    <p>Please provide estimates where exact figures are not available.</p>
+    <p class="meta">
+      ${escape(meta.clientName)} · ${escape(meta.submissionDate)}
+    </p>
   </div>
 </header>
 `;
