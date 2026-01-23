@@ -18,16 +18,21 @@ export default function buildRetirementBudget(payload) {
 <main class="container">
 
   ${renderHeader(meta)}
-
   ${renderHousing(data.housing)}
+  <div class="page-break"></div>
+
   ${renderTransport(data.transport)}
   ${renderLiving(data.living)}
+  <div class="page-break"></div>
+
   ${renderHealth(data.health)}
   ${renderLifestyle(data.lifestyle)}
+  <div class="page-break"></div>
+
   ${renderDebt(data.debt)}
+  <div class="page-break"></div>
 
   ${renderSummary(summary)}
-
   ${renderConfirmation(meta)}
 
 </main>
@@ -76,7 +81,6 @@ function renderHousing(h = {}) {
     <span>$${fmt(h.total)}</span>
   </div>
 
-  <div class="page-break"></div>
 </section>
 `;
 }
@@ -124,7 +128,6 @@ function renderLiving(l = {}) {
     <span>$${fmt(l.total)}</span>
   </div>
 
-  <div class="page-break"></div>
 </section>
 `;
 }
@@ -198,7 +201,6 @@ function renderDebt(d = {}) {
     <span>$${fmt(d.total)}</span>
   </div>
 
-  <div class="page-break"></div>
 </section>
 `;
 }
