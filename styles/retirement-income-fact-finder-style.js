@@ -439,6 +439,7 @@ input[readonly] {
   text-transform: uppercase;
   color: var(--secondary-color);
   margin-bottom: 4px;
+  font-size: 0.95em;
 }
 
 .yesno-answer.yes {
