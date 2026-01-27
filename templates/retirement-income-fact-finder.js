@@ -158,19 +158,19 @@ function renderAdditional(a = {}) {
 <section class="card step confirmation">
   <h2>Additional Retirement Details</h2>
 
-  ${valueBlock("Desired Income in Retirement", a.desiredIncome)}
+  ${staticField("Desired Income in Retirement", a.desiredIncome)}
 
-  ${yesNoBlock("Large Purchases Planned", a.largePurchases)}
-  ${yesNoBlock("Long Term Care Planning", a.longTermCare)}
-  ${yesNoBlock("Estate Planning", a.estatePlanning)}
-  ${yesNoBlock("Cost-of-Living Adjustments", a.costLiving)}
+  ${yesNoField("Large Purchases Planned", a.largePurchases)}
+  ${yesNoField("Long Term Care Planning", a.longTermCare)}
+  ${yesNoField("Estate Planning", a.estatePlanning)}
+  ${yesNoField("Cost-of-Living Adjustments", a.costLiving)}
 
-  ${valueBlock("Current Home Value", a.homeValue)}
+  ${staticField("Current Home Value", a.homeValue)}
 
-  ${yesNoBlock("Downsizing Plans", a.downsizing)}
-  ${yesNoBlock("Other Real Estate", a.realEstate)}
+  ${yesNoField("Downsizing Plans", a.downsizing)}
+  ${yesNoField("Other Real Estate", a.realEstate)}
 
-  ${valueBlock("Total Debt", a.totalDebt)}
+  ${staticField("Total Debt", a.totalDebt)}
 </section>
 `;
 }
@@ -260,31 +260,40 @@ function escape(t = "") {
     .replace(/>/g, "&gt;");
 }
 
-function yesNoBlock(label, obj = {}) {
-  const ans = obj?.answer || "";
+function yesNoField(label, obj = {}) {
+  if (!obj || typeof obj !== "object") {
+    return staticField(label, obj);
+  }
+
+  const yn = (obj.yn || "—").toLowerCase();
+  const note = obj.note || "";
 
   return `
 <div class="field">
   <label>${label}</label>
 
-  <div class="yesno-answer ${ans}">
-    ${ans ? ans.toUpperCase() : "—"}
+  <div class="yesno-answer ${yn === "yes" ? "yes" : yn === "no" ? "no" : ""}">
+    Answer: ${escape(obj.yn || "—")}
   </div>
 
   ${
-    ans === "yes" && obj?.explanation
-      ? `<div class="yesno-explanation">${escape(obj.explanation)}</div>`
+    note
+      ? `
+        <div class="yesno-explanation">
+          ${escape(note)}
+        </div>
+      `
       : ""
   }
 </div>
 `;
 }
 
-function valueBlock(label, value) {
+function staticField(label, value) {
   return `
 <div class="field">
   <label>${label}</label>
-  <div class="static-value">${escape(value)}</div>
+  <div class="static-value">${escape(value || "—")}</div>
 </div>
 `;
 }
