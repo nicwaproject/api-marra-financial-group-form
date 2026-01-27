@@ -158,15 +158,19 @@ function renderAdditional(a = {}) {
 <section class="card step confirmation">
   <h2>Additional Retirement Details</h2>
 
-  ${textarea("Desired Income in Retirement", a.desiredIncome)}
-  ${textarea("Large Purchases Planned", a.largePurchases)}
-  ${textarea("Long Term Care Planning", a.longTermCare)}
-  ${textarea("Estate Planning", a.estatePlanning)}
-  ${textarea("Cost-of-Living Adjustments", a.costLiving)}
-  ${textarea("Current Home Value", a.homeValue)}
-  ${textarea("Downsizing Plans", a.downsizing)}
-  ${textarea("Other Real Estate", a.realEstate)}
-  ${textarea("Total Debt", a.totalDebt)}
+  ${valueBlock("Desired Income in Retirement", a.desiredIncome)}
+
+  ${yesNoBlock("Large Purchases Planned", a.largePurchases)}
+  ${yesNoBlock("Long Term Care Planning", a.longTermCare)}
+  ${yesNoBlock("Estate Planning", a.estatePlanning)}
+  ${yesNoBlock("Cost-of-Living Adjustments", a.costLiving)}
+
+  ${valueBlock("Current Home Value", a.homeValue)}
+
+  ${yesNoBlock("Downsizing Plans", a.downsizing)}
+  ${yesNoBlock("Other Real Estate", a.realEstate)}
+
+  ${valueBlock("Total Debt", a.totalDebt)}
 </section>
 `;
 }
@@ -254,4 +258,33 @@ function escape(t = "") {
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
+}
+
+function yesNoBlock(label, obj = {}) {
+  const ans = obj?.answer || "";
+
+  return `
+<div class="field">
+  <label>${label}</label>
+
+  <div class="yesno-answer ${ans}">
+    ${ans ? ans.toUpperCase() : "—"}
+  </div>
+
+  ${
+    ans === "yes" && obj?.explanation
+      ? `<div class="yesno-explanation">${escape(obj.explanation)}</div>`
+      : ""
+  }
+</div>
+`;
+}
+
+function valueBlock(label, value) {
+  return `
+<div class="field">
+  <label>${label}</label>
+  <div class="static-value">${escape(value)}</div>
+</div>
+`;
 }

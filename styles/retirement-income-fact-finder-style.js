@@ -430,6 +430,36 @@ input[readonly] {
   font-weight: 700;
 }
 
+/* ===============================
+   YES / NO BLOCK (PDF DISPLAY)
+================================= */
+
+.yesno-answer {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+}
+
+.yesno-answer.yes {
+  color: #1f7a1f; /* subtle green */
+}
+
+.yesno-answer.no {
+  color: #7a1f1f; /* subtle red */
+}
+
+.yesno-explanation {
+  font-size: 0.85em;
+  color: #444;
+  padding: 8px 10px;
+  border-left: 3px solid rgba(8, 43, 76, 0.25);
+  background: rgba(8, 43, 76, 0.04);
+  border-radius: 4px;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
 
 @media (max-width: 600px) {
   .form-grid {
