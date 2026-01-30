@@ -461,6 +461,13 @@ input[readonly] {
   line-height: 1.4;
 }
 
+.income-note {
+  display: block;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: #666;
+  margin-top: 4px;
+}
 
 @media (max-width: 600px) {
   .form-grid {

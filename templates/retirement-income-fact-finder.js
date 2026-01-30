@@ -79,7 +79,9 @@ function renderClientInfo(m = {}) {
 function renderIncomeTable(i = {}) {
   return `
 <section class="card step">
-  <h2>Monthly Income Sources</h2>
+  <h2>Monthly Income Sources <span class="income-note">
+    (Social Security should be the age you began or will receive)
+  </span></h2>
 
   <table class="data-table">
     <thead>
@@ -88,8 +90,6 @@ function renderIncomeTable(i = {}) {
         <th>Client</th>
         <th>Spouse</th>
         <th>Joint</th>
-        <th>Current Value</th>
-        <th>Current Investment</th>
       </tr>
     </thead>
     <tbody>
@@ -102,7 +102,7 @@ function renderIncomeTable(i = {}) {
 
       <tr class="table-total">
         <td><strong>Total Monthly Income</strong></td>
-        ${totalCells(i.totals, 5)}
+        ${totalCells(i.totals, 3)}
       </tr>
     </tbody>
   </table>
@@ -218,8 +218,6 @@ function incomeRow(label, r = {}) {
   <td>${fmt(r.client)}</td>
   <td>${fmt(r.spouse)}</td>
   <td>${fmt(r.joint)}</td>
-  <td>${fmt(r.currentValue)}</td>
-  <td>${fmt(r.currentInvestment)}</td>
 </tr>
 `;
 }
